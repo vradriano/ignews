@@ -18,7 +18,6 @@ export function Header() {
         </nav>
         <SignInButton />
       </div>
-
     </header>
   )
 }
