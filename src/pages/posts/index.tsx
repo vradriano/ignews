@@ -3,6 +3,7 @@ import Head from 'next/head'
 import { getPrismicClient } from '../../services/prismic'
 import styles from './styles.module.scss'
 import Prismic from '@prismicio/client'
+import { useSession } from "next-auth/react"
 import { RichText } from 'prismic-dom'
 import Link from 'next/link'
 
@@ -18,6 +19,8 @@ interface PostsProps {
 }
 
 export default function Posts({ posts }: PostsProps) {
+  const session = useSession()
+  console.log(session)
   return (
     <>
       <Head>
@@ -50,6 +53,9 @@ export const getStaticProps: GetStaticProps = async () => {
     fetch: ['post.title', 'post.content'],
     pageSize: 100,
   })
+
+  console.log(JSON.stringify(response, null, 2))
+  console.log(response.results[0].data)
 
   const posts = response.results.map(post => {
     return {
