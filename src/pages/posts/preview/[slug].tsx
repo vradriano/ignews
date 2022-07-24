@@ -14,7 +14,7 @@ interface PostPreviewProps {
     slug: string;
     title: string;
     content: string;
-    updateAt: string;
+    updatedAt: string;
   }
 }
 
@@ -24,7 +24,7 @@ export default function PostPreview({ post }: PostPreviewProps) {
   const router = useRouter()
 
   useEffect(() => {
-    if (session.activeSubscription) {
+    if (session?.activeSubscription) {
       router.push(`/posts/${post.slug}`)
     }
   }, [session])
@@ -40,7 +40,7 @@ export default function PostPreview({ post }: PostPreviewProps) {
       <main className={styles.container}>
         <article className={styles.post}>
           <h1>{post.title}</h1>
-          <time>{post.updateAt}</time>
+          <time>{post.updatedAt}</time>
         </article>
 
         <div
@@ -79,7 +79,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     slug,
     title: RichText.asText(response.data.title),
     content: RichText.asHtml(response.data.content.splice(0, 3)),
-    updateAt: new Date(response.last_publication_date).toLocaleDateString('pt-br', {
+    updatedAt: new Date(response.last_publication_date).toLocaleDateString('pt-br', {
       day: '2-digit',
       month: 'long',
       year: 'numeric'

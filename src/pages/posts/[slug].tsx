@@ -11,7 +11,7 @@ interface PostProps {
     slug: string;
     title: string;
     content: string;
-    updateAt: string;
+    updatedAt: string;
   }
 }
 
