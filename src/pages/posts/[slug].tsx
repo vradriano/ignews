@@ -15,7 +15,7 @@ interface PostProps {
   }
 }
 
-export default function Posts({ post }) {
+export default function Posts({ post }: PostProps) {
   return (
     <>
       <Head>
@@ -27,7 +27,7 @@ export default function Posts({ post }) {
       <main className={styles.container}>
         <article className={styles.post}>
           <h1>{post.title}</h1>
-          <time>{post.updateAt}</time>
+          <time>{post.updatedAt}</time>
         </article>
 
         <div
@@ -54,7 +54,7 @@ export const getServerSideProps: GetServerSideProps = async ({ req, params }) =>
 
   const prismic = getPrismicClient(req)
 
-  const response = await prismic.getByUID('publication', String(slug), {})
+  const response = await prismic.getByUID<any>('publication', String(slug), {})
 
   const post = {
     slug,
