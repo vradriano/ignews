@@ -47,7 +47,7 @@ export const getServerSideProps: GetServerSideProps = async ({ req, params }) =>
     return {
       redirect: {
         destination: '/',
-        permanet: false
+        permanent: false
       }
     }
   }
@@ -60,7 +60,7 @@ export const getServerSideProps: GetServerSideProps = async ({ req, params }) =>
     slug,
     title: RichText.asText(response.data.title),
     content: RichText.asHtml(response.data.content),
-    updateAt: new Date(response.last_publication_date).toLocaleDateString('pt-br', {
+    updatedAt: new Date(response.last_publication_date).toLocaleDateString('pt-br', {
       day: '2-digit',
       month: 'long',
       year: 'numeric'
