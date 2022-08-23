@@ -1,4 +1,11 @@
-<Div>![avatar](https://user-images.githubusercontent.com/90075349/186059583-67f0f3b1-35f0-4ff4-acbe-a89592898198.svg)
+<h1 align="center">
+  <img alt="Logo" src='https://user-images.githubusercontent.com/90075349/186059583-67f0f3b1-35f0-4ff4-acbe-a89592898198.svg' alt="ig.News">
+</h1>
+
+<h1 align="center">
+ Ig.News
+</h1>
+
 ## Sobre
 O Ig.news é um blog de assinatura, onde o usuário precisa fazer o pagamento de uma inscrição através de uma api(STRIPE) de pagamento, para ter acesso aos posts exclusivos do blog. Foi utilizado React com o framework NEXT.JS para o desenvolvimento da aplicação afim de otimizar os motores de busca(SEO), para postagem das publicações foi utilizado Prismic CMS, onde o dono do site pode postar e formatar seus posts com um sistema de gestão de conteúdo. O sistema de login foi criado com Next-Auth, onde foi utilizado um sistema de login social para que possa ser feito o cadastro através do Github do usuário. Para armazenar as informações relacionadas a inscrição foi utilizado o banco de dados FaunaDB.  
 
